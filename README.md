@@ -19,10 +19,11 @@ it, simply add the following line to your Podfile:
 pod "OriginateAutoLayout"
 ```
 
-## Author
+## Authors
 
-Allen Wu, allen.wu@originate.com
+* Aaron Daub, aaron.daub@originate.com
+* Allen Wu, allen.wu@originate.com
 
 ## License
 
-OriginateAutoLayout is available under the MIT license. See the LICENSE file for more info.
+OriginateAutoLayout is available under the MIT license. See the [LICENSE](/LICENSE) file for more info.
