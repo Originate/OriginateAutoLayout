@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'OriginateAutoLayout_Example', :exclusive => true do
+  pod "OriginateAutoLayout", :path => "../"
+end
+
+target 'OriginateAutoLayout_Tests', :exclusive => true do
+  pod "OriginateAutoLayout", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
