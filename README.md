@@ -6,10 +6,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
-This uses `+[NSLayoutContraint activateConstraints:]` and thus requires iOS 8 or higher
-
 ## Installation
 
 OriginateAutoLayout is available through [CocoaPods](http://cocoapods.org). To install
