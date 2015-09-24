@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "OriginateAutoLayout"
   s.version          = "0.0.1"
-  s.summary          = "A short description of OriginateAutoLayout."
+  s.summary          = "A collection of convenient AutoLayout methods for declarative layouts."
 
   s.homepage         = "https://github.com/Originate/OriginateAutoLayout"
   s.license          = 'MIT'
