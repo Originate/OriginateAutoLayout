@@ -2,22 +2,19 @@
 
 [![CI Status](http://img.shields.io/travis/Originate/OriginateAutoLayout.svg?style=flat)](https://travis-ci.org/Originate/OriginateAutoLayout)
 
-## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Installation with CocoaPods
+
+Add the following lines to your Podfile and then run `pod install`.
+
+```ruby
+source 'https://github.com/Originate/CocoaPods.git'
+pod 'OriginateAutoLayout'
+```
 
 ## Requirements
 
 This uses `+[NSLayoutContraint activateConstraints:]` and thus requires iOS 8 or higher
-
-## Installation
-
-OriginateAutoLayout is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "OriginateAutoLayout"
-```
 
 ## Authors
 
