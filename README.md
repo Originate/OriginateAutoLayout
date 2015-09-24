@@ -1,15 +1,14 @@
 # OriginateAutoLayout
 
-[![CI Status](http://img.shields.io/travis/Allen Wu/OriginateAutoLayout.svg?style=flat)](https://travis-ci.org/Allen Wu/OriginateAutoLayout)
-[![Version](https://img.shields.io/cocoapods/v/OriginateAutoLayout.svg?style=flat)](http://cocoapods.org/pods/OriginateAutoLayout)
-[![License](https://img.shields.io/cocoapods/l/OriginateAutoLayout.svg?style=flat)](http://cocoapods.org/pods/OriginateAutoLayout)
-[![Platform](https://img.shields.io/cocoapods/p/OriginateAutoLayout.svg?style=flat)](http://cocoapods.org/pods/OriginateAutoLayout)
+[![CI Status](http://img.shields.io/travis/Originate/OriginateAutoLayout.svg?style=flat)](https://travis-ci.org/Originate/OriginateAutoLayout)
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+This uses `+[NSLayoutContraint activateConstraints:]` and thus requires iOS 8 or higher
 
 ## Installation
 

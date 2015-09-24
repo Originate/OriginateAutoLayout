@@ -1,0 +1,6 @@
+framework module OriginateAutoLayout {
+  umbrella header "OriginateAutoLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}
