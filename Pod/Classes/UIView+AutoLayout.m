@@ -11,6 +11,21 @@
 
 @implementation UIView (AutoLayout)
 
+#pragma mark - Adding Views
+
+- (void)addAutoLayoutSubview:(UIView *)subview {
+    if ([subview isKindOfClass:[UIView class]]) {
+        subview.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:subview];
+    }
+}
+
+- (void)addAutoLayoutSubviews:(NSArray *)subviews {
+    for (UIView* subview in subviews) {
+        [self addAutoLayoutSubview:subview];
+    }
+}
+
 #pragma mark - Centering
 
 - (NSLayoutConstraint*)centerHorizontally {
