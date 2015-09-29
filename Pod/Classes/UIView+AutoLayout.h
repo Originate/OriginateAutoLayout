@@ -10,6 +10,11 @@
 
 @interface UIView (AutoLayout)
 
+#pragma mark - Adding Views
+
+- (void)addAutoLayoutSubview:(UIView *)subview;
+- (void)addAutoLayoutSubviews:(NSArray *)subviews;
+
 #pragma mark - Centering
 
 - (NSLayoutConstraint*)centerHorizontally;
