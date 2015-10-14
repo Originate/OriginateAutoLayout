@@ -417,12 +417,12 @@
 
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
   return @[[self pinToTopWithPadding:padding automatically:automatically],
-           [self pinToBottomWithPadding:-padding automatically:automatically]];
+           [self pinToBottomWithPadding:padding automatically:automatically]];
 }
 
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
   return @[[self pinToLeftWithPadding:padding automatically:automatically],
-           [self pinToRightWithPadding:-padding automatically:automatically]];
+           [self pinToRightWithPadding:padding automatically:automatically]];
 }
 
 #pragma mark - Corners
