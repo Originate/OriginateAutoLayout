@@ -110,6 +110,14 @@
   return [self pinToVerticalEdgesWithPadding:padding automatically:YES];
 }
 
+- (NSArray*)pinToSuperview{
+  return [self pinToSuperviewWithPadding:0];
+}
+
+- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding{
+  return [self pinToSuperviewWithPadding:padding automatically:YES];
+}
+
 #pragma mark - Corners
 
 - (NSArray*)placeInTopLeftCornerOfView:(UIView*)view {
@@ -415,6 +423,10 @@
   return [self pinToVerticalEdgesWithPadding:0 automatically:automatically];
 }
 
+- (NSArray*)pinToSuperviewAutomatically:(BOOL)automatically {
+  return [self pinToSuperviewWithPadding:0 automatically:automatically];
+}
+
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
   return @[[self pinToTopWithPadding:padding automatically:automatically],
            [self pinToBottomWithPadding:padding automatically:automatically]];
@@ -422,6 +434,13 @@
 
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
   return @[[self pinToLeftWithPadding:padding automatically:automatically],
+           [self pinToRightWithPadding:padding automatically:automatically]];
+}
+
+- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+  return @[[self pinToTopWithPadding:padding automatically:automatically],
+           [self pinToBottomWithPadding:padding automatically:automatically],
+           [self pinToLeftWithPadding:padding automatically:automatically],
            [self pinToRightWithPadding:padding automatically:automatically]];
 }
 
