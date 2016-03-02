@@ -46,6 +46,16 @@
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding;
 - (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding;
 
+- (NSArray*)pinToSuperviewExcludingTopEdge;
+- (NSArray*)pinToSuperviewExcludingBottomEdge;
+- (NSArray*)pinToSuperviewExcludingLeftEdge;
+- (NSArray*)pinToSuperviewExcludingRightEdge;
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding;
+
 #pragma mark - Corners
 
 - (NSArray*)placeInTopLeftCornerOfView:(UIView*)view;
@@ -148,7 +158,17 @@
 
 - (NSArray*)pinToSuperviewAutomatically:(BOOL)automatically;
 - (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
-    
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeAutomatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingBottomEdgeAutomatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingLeftEdgeAutomatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingRightEdgeAutomatically:(BOOL)automatically;
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+
 #pragma mark - Corners
 
 - (NSArray*)placeInTopLeftCornerOfView:(UIView*)view automatically:(BOOL)automatically;

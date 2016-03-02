@@ -110,13 +110,46 @@
   return [self pinToVerticalEdgesWithPadding:padding automatically:YES];
 }
 
-- (NSArray*)pinToSuperview{
+- (NSArray*)pinToSuperview {
   return [self pinToSuperviewWithPadding:0];
 }
 
-- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding{
+- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding {
   return [self pinToSuperviewWithPadding:padding automatically:YES];
 }
+
+- (NSArray*)pinToSuperviewExcludingTopEdge {
+  return [self pinToSuperviewExcludingTopEdgeWithPadding:0];
+}
+
+- (NSArray*)pinToSuperviewExcludingBottomEdge {
+  return [self pinToSuperviewExcludingBottomEdgeWithPadding:0];
+}
+
+- (NSArray*)pinToSuperviewExcludingLeftEdge {
+  return [self pinToSuperviewExcludingLeftEdgeWithPadding:0];
+}
+
+- (NSArray*)pinToSuperviewExcludingRightEdge {
+  return [self pinToSuperviewExcludingRightEdgeWithPadding:0];
+}
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding {
+  return [self pinToSuperviewExcludingTopEdgeWithPadding:padding automatically:YES];
+}
+
+- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding {
+  return [self pinToSuperviewExcludingBottomEdgeWithPadding:padding automatically:YES];
+}
+
+- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding {
+  return [self pinToSuperviewExcludingLeftEdgeWithPadding:padding automatically:YES];
+}
+
+- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding {
+  return [self pinToSuperviewExcludingRightEdgeWithPadding:padding automatically:YES];
+}
+
 
 #pragma mark - Corners
 
@@ -442,6 +475,47 @@
            [self pinToBottomWithPadding:padding automatically:automatically],
            [self pinToLeftWithPadding:padding automatically:automatically],
            [self pinToRightWithPadding:padding automatically:automatically]];
+}
+
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeAutomatically:(BOOL)automatically {
+    return [self pinToSuperviewExcludingTopEdgeWithPadding:0 automatically:automatically];
+}
+
+- (NSArray*)pinToSuperviewExcludingBottomEdgeAutomatically:(BOOL)automatically {
+    return [self pinToSuperviewExcludingBottomEdgeWithPadding:0 automatically:automatically];
+}
+
+- (NSArray*)pinToSuperviewExcludingLeftEdgeAutomatically:(BOOL)automatically {
+    return [self pinToSuperviewExcludingLeftEdgeWithPadding:0 automatically:automatically];
+}
+
+- (NSArray*)pinToSuperviewExcludingRightEdgeAutomatically:(BOOL)automatically {
+    return [self pinToSuperviewExcludingRightEdgeWithPadding:0 automatically:automatically];
+}
+
+- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+  return @[[self pinToBottomWithPadding:padding automatically:automatically],
+           [self pinToLeftWithPadding:padding automatically:automatically],
+           [self pinToRightWithPadding:padding automatically:automatically]];
+}
+
+- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+  return @[[self pinToTopWithPadding:padding automatically:automatically],
+           [self pinToLeftWithPadding:padding automatically:automatically],
+           [self pinToRightWithPadding:padding automatically:automatically]];
+}
+
+- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+  return @[[self pinToTopWithPadding:padding automatically:automatically],
+           [self pinToBottomWithPadding:padding automatically:automatically],
+           [self pinToRightWithPadding:padding automatically:automatically]];
+}
+
+- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+  return @[[self pinToTopWithPadding:padding automatically:automatically],
+           [self pinToBottomWithPadding:padding automatically:automatically],
+           [self pinToLeftWithPadding:padding automatically:automatically]];
 }
 
 #pragma mark - Corners
