@@ -40,9 +40,11 @@
 
 - (NSArray*)pinToHorizontalEdges;
 - (NSArray*)pinToVerticalEdges;
+- (NSArray*)pinToSuperview;
 
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding;
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding;
 
 #pragma mark - Corners
 
@@ -144,6 +146,9 @@
 - (NSArray*)pinToVerticalEdgesAutomatically:(BOOL)automatically;
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
 
+- (NSArray*)pinToSuperviewAutomatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+    
 #pragma mark - Corners
 
 - (NSArray*)placeInTopLeftCornerOfView:(UIView*)view automatically:(BOOL)automatically;
