@@ -46,7 +46,7 @@
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding;
 - (NSArray*)pinToSuperviewEdgesWithPadding:(CGFloat)padding;
 
-- (NSArray*)pinToSuperviewEdgesExcludingEdge;
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge;
 - (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding;
 
 #pragma mark - Corners

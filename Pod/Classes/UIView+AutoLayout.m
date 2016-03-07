@@ -460,19 +460,19 @@
 
 - (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding automatically:(BOOL)automatically {
     NSMutableArray *constraints = [[NSMutableArray alloc] init];
-    if (edge & UIRectEdgeTop) {
+    if (!(edge & UIRectEdgeTop)) {
         [constraints addObject:[self pinToTopWithPadding:padding automatically:automatically]];
     }
     
-    if (edge & UIRectEdgeBottom) {
+    if (!(edge & UIRectEdgeBottom)) {
         [constraints addObject:[self pinToBottomWithPadding:padding automatically:automatically]];
     }
     
-    if (edge & UIRectEdgeLeft) {
+    if (!(edge & UIRectEdgeLeft)) {
         [constraints addObject:[self pinToLeftWithPadding:padding automatically:automatically]];
     }
     
-    if (edge & UIRectEdgeRight) {
+    if (!(edge & UIRectEdgeRight)) {
         [constraints addObject:[self pinToRightWithPadding:padding automatically:automatically]];
     }
     return [constraints copy];
