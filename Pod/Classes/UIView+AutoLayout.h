@@ -40,21 +40,14 @@
 
 - (NSArray*)pinToHorizontalEdges;
 - (NSArray*)pinToVerticalEdges;
-- (NSArray*)pinToSuperview;
+- (NSArray*)pinToSuperviewEdges;
 
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding;
 - (NSArray*)pinToHorizontalEdgesWithPadding:(CGFloat)padding;
-- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewEdgesWithPadding:(CGFloat)padding;
 
-- (NSArray*)pinToSuperviewExcludingTopEdge;
-- (NSArray*)pinToSuperviewExcludingBottomEdge;
-- (NSArray*)pinToSuperviewExcludingLeftEdge;
-- (NSArray*)pinToSuperviewExcludingRightEdge;
-
-- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding;
-- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding;
-- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding;
-- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding;
+- (NSArray*)pinToSuperviewEdgesExcludingEdge;
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding;
 
 #pragma mark - Corners
 
@@ -156,18 +149,11 @@
 - (NSArray*)pinToVerticalEdgesAutomatically:(BOOL)automatically;
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
 
-- (NSArray*)pinToSuperviewAutomatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewEdgesAutomatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
 
-- (NSArray*)pinToSuperviewExcludingTopEdgeAutomatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingBottomEdgeAutomatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingLeftEdgeAutomatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingRightEdgeAutomatically:(BOOL)automatically;
-
-- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
-- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge automatically:(BOOL)automatically;
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding automatically:(BOOL)automatically;
 
 #pragma mark - Corners
 

@@ -110,44 +110,20 @@
   return [self pinToVerticalEdgesWithPadding:padding automatically:YES];
 }
 
-- (NSArray*)pinToSuperview {
-  return [self pinToSuperviewWithPadding:0];
+- (NSArray*)pinToSuperviewEdges {
+  return [self pinToSuperviewEdgesWithPadding:0];
 }
 
-- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding {
-  return [self pinToSuperviewWithPadding:padding automatically:YES];
+- (NSArray*)pinToSuperviewEdgesWithPadding:(CGFloat)padding {
+  return [self pinToSuperviewEdgesWithPadding:padding automatically:YES];
 }
 
-- (NSArray*)pinToSuperviewExcludingTopEdge {
-  return [self pinToSuperviewExcludingTopEdgeWithPadding:0];
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge {
+    return [self pinToSuperviewEdgesExcludingEdge:edge padding:0];
 }
 
-- (NSArray*)pinToSuperviewExcludingBottomEdge {
-  return [self pinToSuperviewExcludingBottomEdgeWithPadding:0];
-}
-
-- (NSArray*)pinToSuperviewExcludingLeftEdge {
-  return [self pinToSuperviewExcludingLeftEdgeWithPadding:0];
-}
-
-- (NSArray*)pinToSuperviewExcludingRightEdge {
-  return [self pinToSuperviewExcludingRightEdgeWithPadding:0];
-}
-
-- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding {
-  return [self pinToSuperviewExcludingTopEdgeWithPadding:padding automatically:YES];
-}
-
-- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding {
-  return [self pinToSuperviewExcludingBottomEdgeWithPadding:padding automatically:YES];
-}
-
-- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding {
-  return [self pinToSuperviewExcludingLeftEdgeWithPadding:padding automatically:YES];
-}
-
-- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding {
-  return [self pinToSuperviewExcludingRightEdgeWithPadding:padding automatically:YES];
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding {
+  return [self pinToSuperviewEdgesExcludingEdge:edge padding:padding automatically:YES];
 }
 
 
@@ -456,8 +432,8 @@
   return [self pinToVerticalEdgesWithPadding:0 automatically:automatically];
 }
 
-- (NSArray*)pinToSuperviewAutomatically:(BOOL)automatically {
-  return [self pinToSuperviewWithPadding:0 automatically:automatically];
+- (NSArray*)pinToSuperviewEdgesAutomatically:(BOOL)automatically {
+  return [self pinToSuperviewEdgesWithPadding:0 automatically:automatically];
 }
 
 - (NSArray*)pinToVerticalEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
@@ -470,7 +446,7 @@
            [self pinToRightWithPadding:padding automatically:automatically]];
 }
 
-- (NSArray*)pinToSuperviewWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
+- (NSArray*)pinToSuperviewEdgesWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
   return @[[self pinToTopWithPadding:padding automatically:automatically],
            [self pinToBottomWithPadding:padding automatically:automatically],
            [self pinToLeftWithPadding:padding automatically:automatically],
@@ -478,44 +454,28 @@
 }
 
 
-- (NSArray*)pinToSuperviewExcludingTopEdgeAutomatically:(BOOL)automatically {
-    return [self pinToSuperviewExcludingTopEdgeWithPadding:0 automatically:automatically];
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge automatically:(BOOL)automatically {
+    return [self pinToSuperviewEdgesExcludingEdge:edge padding:0 automatically:automatically];
 }
 
-- (NSArray*)pinToSuperviewExcludingBottomEdgeAutomatically:(BOOL)automatically {
-    return [self pinToSuperviewExcludingBottomEdgeWithPadding:0 automatically:automatically];
-}
-
-- (NSArray*)pinToSuperviewExcludingLeftEdgeAutomatically:(BOOL)automatically {
-    return [self pinToSuperviewExcludingLeftEdgeWithPadding:0 automatically:automatically];
-}
-
-- (NSArray*)pinToSuperviewExcludingRightEdgeAutomatically:(BOOL)automatically {
-    return [self pinToSuperviewExcludingRightEdgeWithPadding:0 automatically:automatically];
-}
-
-- (NSArray*)pinToSuperviewExcludingTopEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
-  return @[[self pinToBottomWithPadding:padding automatically:automatically],
-           [self pinToLeftWithPadding:padding automatically:automatically],
-           [self pinToRightWithPadding:padding automatically:automatically]];
-}
-
-- (NSArray*)pinToSuperviewExcludingBottomEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
-  return @[[self pinToTopWithPadding:padding automatically:automatically],
-           [self pinToLeftWithPadding:padding automatically:automatically],
-           [self pinToRightWithPadding:padding automatically:automatically]];
-}
-
-- (NSArray*)pinToSuperviewExcludingLeftEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
-  return @[[self pinToTopWithPadding:padding automatically:automatically],
-           [self pinToBottomWithPadding:padding automatically:automatically],
-           [self pinToRightWithPadding:padding automatically:automatically]];
-}
-
-- (NSArray*)pinToSuperviewExcludingRightEdgeWithPadding:(CGFloat)padding automatically:(BOOL)automatically {
-  return @[[self pinToTopWithPadding:padding automatically:automatically],
-           [self pinToBottomWithPadding:padding automatically:automatically],
-           [self pinToLeftWithPadding:padding automatically:automatically]];
+- (NSArray*)pinToSuperviewEdgesExcludingEdge:(UIRectEdge)edge padding:(CGFloat)padding automatically:(BOOL)automatically {
+    NSMutableArray *constraints = [[NSMutableArray alloc] init];
+    if (edge & UIRectEdgeTop) {
+        [constraints addObject:[self pinToTopWithPadding:padding automatically:automatically]];
+    }
+    
+    if (edge & UIRectEdgeBottom) {
+        [constraints addObject:[self pinToBottomWithPadding:padding automatically:automatically]];
+    }
+    
+    if (edge & UIRectEdgeLeft) {
+        [constraints addObject:[self pinToLeftWithPadding:padding automatically:automatically]];
+    }
+    
+    if (edge & UIRectEdgeRight) {
+        [constraints addObject:[self pinToRightWithPadding:padding automatically:automatically]];
+    }
+    return [constraints copy];
 }
 
 #pragma mark - Corners
