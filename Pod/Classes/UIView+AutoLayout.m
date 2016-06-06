@@ -758,7 +758,7 @@
   UIView* previousView;
   for (UIView* view in views) {
     if (previousView) {
-      [constraints addObject:[self placeBelowView:previousView padding:padding automatically:automatically]];
+      [constraints addObject:[view placeBelowView:previousView padding:padding automatically:automatically]];
     }
     previousView = view;
   }
@@ -772,7 +772,7 @@
   UIView* previousView;
   for (UIView* view in views) {
     if (previousView) {
-      [constraints addObject:[self placeRightOfView:previousView padding:padding automatically:automatically]];
+      [constraints addObject:[view placeRightOfView:previousView padding:padding automatically:automatically]];
     }
     previousView = view;
   }
